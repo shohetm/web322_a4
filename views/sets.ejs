@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Sets Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <%- include('partials/navbar', { page: '/lego/sets' }) %>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-gray-200 p-8 text-center">
+            <div>
+                <h1 class="text-5xl font-bold">Collection</h1>
+            <p class="py-6">
+                Here is a collection of all available Lego sets. you can filter by theme as well: 
+            </p>
+                <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=basic set"> Basic Set</a>
+                <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=icons"> Icons</a>
+                <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=town"> Town Set</a>
+        </div>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
+            <% sets.forEach(set => { %>
+                <div class="bg-white shadow-xl rounded p-4">
+                    <div class="mt-4">
+                        <h2 class="text-xl font-bold"><%= set.name %></h2>
+                        <p><a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=<%= set.theme %>"><%= set.theme %></a></p>
+                        <p>Year: <%= set.year %></p>
+                        <p>Number of Parts: <%= set.num_parts %></p>
+                        <a class="bg-green-500 text-white py-2 px-4 rounded" href="/lego/sets/<%= set.set_num %>">Details</a>
+                    </div>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>

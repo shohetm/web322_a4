@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <%- include('partials/navbar', { page: '/about' }) %>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-gray-200 p-8 text-center">
+            <div>
+                <h1 class="text-5xl font-bold">About</h1>
+                <p class="mt-6 mb-4">All about me and this project.</p>
+            </div>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 py-6">
+            <div class="bg-white shadow-xl rounded p-4">
+            <figure><img src="/public/images/Grading.jpg" alt="Getting my brown belt image" class="w-full rounded"></figure>
+            </div>
+            <div class="bg-white shadow-xl rounded p-4">
+                <div class="mt-4">
+                    <h2 class="text-xl font-bold">About Me</h2>
+                    <p class="mt-4">My name is Mike. I am working towards finishing my third semester in Computer Programming and Analysis at Seneca Polytechnic. Aside from programming, my hobbies include a variety of physical activities, including Brazilian Jiujitsu, which I have been training for nearly 20 years and received my brown belt last year. Along with Jiujitsu, I also enjoy hockey, as any good Canadian boy would, as well as hiking and being outdoors.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
