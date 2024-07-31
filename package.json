@@ -1,7 +1,7 @@
 {
   "scripts": {
     "tw:build": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch",
-    "start": "node --watch server.js"
+    "start": "node server.js"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
