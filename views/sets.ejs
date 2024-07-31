@@ -19,18 +19,19 @@
             </p>
                 <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=basic set"> Basic Set</a>
                 <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=icons"> Icons</a>
-                <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=town"> Town Set</a>
-        </div>
+                <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=town"> Town Set</a>     
+            </div>
         </section>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
             <% sets.forEach(set => { %>
                 <div class="bg-white shadow-xl rounded p-4">
                     <div class="mt-4">
                         <h2 class="text-xl font-bold"><%= set.name %></h2>
-                        <p><a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=<%= set.theme %>"><%= set.theme %></a></p>
+                        <p><a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=<%= set.Theme.name %>"><%= set.Theme.name %></a></p>
                         <p>Year: <%= set.year %></p>
                         <p>Number of Parts: <%= set.num_parts %></p>
                         <a class="bg-green-500 text-white py-2 px-4 rounded" href="/lego/sets/<%= set.set_num %>">Details</a>
+                        <a class="bg-yellow-500 text-white py-2 px-4 rounded" href="/lego/editSet/<%= set.set_num %>">Edit</a>
                     </div>
                 </div>
             <% }) %>
