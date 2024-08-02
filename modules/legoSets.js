@@ -1,8 +1,6 @@
 require("dotenv").config();
 
 
-let sets = []; 
-
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const { FOREIGNKEYS } = require("sequelize/lib/query-types");
@@ -21,6 +19,14 @@ let sequelize = new Sequelize(
       },
     }
   );
+
+  sequelize.authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
 
   const Theme = sequelize.define('Theme', {
     id: {
