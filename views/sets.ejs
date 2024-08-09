@@ -1,3 +1,18 @@
+<!--/********************************************************************************
+* WEB322 – Assignment 06
+* 
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+* 
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+* 
+* Name: Mike Shohet Student ID: 146462197 Date: 08-08-2024
+*
+* Published URL: https://web322-a4.vercel.app/
+*
+********************************************************************************/-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +29,9 @@
         <section class="bg-gray-200 p-8 text-center">
             <div>
                 <h1 class="text-5xl font-bold">Collection</h1>
-            <p class="py-6">
-                Here is a collection of all available Lego sets. you can filter by theme as well: 
-            </p>
+                <p class="py-6">
+                    Here is a collection of all available Lego sets. You can filter by theme as well: 
+                </p>
                 <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=basic set"> Basic Set</a>
                 <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=icons"> Icons</a>
                 <a class="bg-blue-500 text-white py-2 px-4 rounded" href="/lego/sets?theme=town"> Town Set</a>     
@@ -31,7 +46,12 @@
                         <p>Year: <%= set.year %></p>
                         <p>Number of Parts: <%= set.num_parts %></p>
                         <a class="bg-green-500 text-white py-2 px-4 rounded" href="/lego/sets/<%= set.set_num %>">Details</a>
-                        <a class="bg-yellow-500 text-white py-2 px-4 rounded" href="/lego/editSet/<%= set.set_num %>">Edit</a>
+
+                        <% if (user) { %>  <!-- Check if the user is logged in -->
+                            <a class="bg-yellow-500 text-white py-2 px-4 rounded" href="/lego/editSet/<%= set.set_num %>">Edit</a>
+                            <a class="bg-red-500 text-white py-2 px-4 rounded" href="/lego/deleteSet/<%= set.set_num %>">Delete</a>
+                        <% } %>
+
                     </div>
                 </div>
             <% }) %>
